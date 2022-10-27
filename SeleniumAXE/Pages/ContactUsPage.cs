@@ -9,6 +9,7 @@ namespace OctoberSpecflow.Pages
 {
     internal class ContactUsPage : BasePage
     {
+        // Test Comment
         public ContactUsPage(IWebDriver driver) : base(driver) { }
 
         private string PageTitle => "Contact us - My Store";
