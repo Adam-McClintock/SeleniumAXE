@@ -1,0 +1,34 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OctoberSpecflow" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Browser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">chrome</Value>
+    </Setting>
+    <Setting Name="Delays" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="DelayCycles" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="ScreenshotPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\screenshots</Value>
+    </Setting>
+    <Setting Name="Headless" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ClearCache" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AppURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Include url here</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;DB connection string&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">DB connection string</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
