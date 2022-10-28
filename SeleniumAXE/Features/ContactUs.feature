@@ -2,16 +2,19 @@
 As a user I should be able to contact the company using a contact form
 where I can enter details about my issue
 
+@UI
 Scenario: Navigate to customer service contact form
 	Given I have navigated to the Automation Practice Home Page
 	When I navigate to the contactUsPage
 	Then I confirm that the contactUsPage is visible
 
+@UI
 Scenario: Validate Customer Contact Form is Visible
 	Given I have navigated to the Automation Practice Home Page
 	When I navigate to the contactUsPage
 	Then I confirm that the contact us form is visible
 
+@UI
 Scenario: Validate that user is abe to submit completed contact form
 	Given I have navigated to the Automation Practice Home Page
 	When I navigate to the contactUsPage
