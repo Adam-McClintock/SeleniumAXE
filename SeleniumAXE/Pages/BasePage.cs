@@ -26,7 +26,7 @@ namespace OctoberSpecflow.Pages
         {
             AutomationPracticeHomePage homePage = new AutomationPracticeHomePage(Driver);
             homePage.GoTo();
-            ScenarioContext.Current.Add("driver", homePage);
+            //ScenarioContext.Current.Add("driver", homePage);
         }
 
         public void WaitForElement(string element)
