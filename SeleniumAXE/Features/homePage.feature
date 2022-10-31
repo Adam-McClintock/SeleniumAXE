@@ -1,6 +1,6 @@
 ﻿Feature: homePage
 
-A short summary of the feature
+Tests for the homepage
 
 @AXE
 Scenario: Home Page Accessibility Scan
