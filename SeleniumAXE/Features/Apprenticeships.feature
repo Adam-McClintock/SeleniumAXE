@@ -16,16 +16,19 @@ Scenario: Hide Message Link
 	When I hide the message banner
 	Then I confirm the hideMessageLink is not present
 
+@UI
 Scenario: Navigate To Become An Apprentice Page
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
 
+@UI
 Scenario: Navigate To Browse Apprenticeships Page
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
 	When I navigate to the Browse Apprenticeships page
 	Then a Browse an Apprenticeship page is displayed
 
+@UI
 Scenario: Search for Apprenticeship - NI Postcode
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
@@ -34,6 +37,7 @@ Scenario: Search for Apprenticeship - NI Postcode
 	When I search for an apprenticeship in NI
 	Then I confirm the NI Apprenticeship Heading is displayed
 
+@UI
 Scenario: Search for Apprenticeship - Scottish Postcode
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
@@ -42,6 +46,7 @@ Scenario: Search for Apprenticeship - Scottish Postcode
 	When I search for an apprenticeship in Scotland
 	Then I confirm the Scottish Apprenticeship Heading is displayed
 
+@UI
 Scenario: Search for Apprenticeship - Welsh Postcode
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
@@ -50,6 +55,7 @@ Scenario: Search for Apprenticeship - Welsh Postcode
 	When I search for an apprenticeship in Wales
 	Then I confirm the Welsh Apprenticeship Heading is displayed
 
+@UI
 Scenario: Search for Apprenticeship - Empty Search
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
@@ -59,6 +65,7 @@ Scenario: Search for Apprenticeship - Empty Search
 	Then an error alert is displayed
 	And the empty field validation messages are displayed
 
+@UI
 Scenario: Search for Apprenticeship - Valid
 	When I navigate to the Become An Apprentice page
 	Then a Become an apprentice page is displayed
