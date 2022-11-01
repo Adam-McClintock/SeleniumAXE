@@ -11,6 +11,7 @@ namespace SeleniumAXE.AutomationResources
     [Binding]
     public class BaseClass : TechTalk.SpecFlow.Steps
     {
+        // BaseClass
         protected IWebDriver Driver { get; }
 
         public BaseClass(IWebDriver driver)
