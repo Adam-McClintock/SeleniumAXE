@@ -9,13 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <SpecFlowObsoleteCodeBehindFiles Remove="Features\homePage.feature.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BoDi" Version="1.5.0" />
     <PackageReference Include="CognizantSoftvision.Maqs" Version="9.0.3" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="FluentAssertions" Version="6.8.0" />
     <PackageReference Include="Gherkin" Version="24.1.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />

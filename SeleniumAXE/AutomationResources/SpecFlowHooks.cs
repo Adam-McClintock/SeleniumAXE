@@ -16,7 +16,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 using SeleniumAXE;
 
-namespace OctoberSpecflow.AutomationResources
+namespace SeleniumAXE.AutomationResources
 {
     [Binding]
     public class SpecFlowHooks

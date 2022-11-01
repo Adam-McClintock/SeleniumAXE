@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OctoberSpecflow.Enums
+namespace SeleniumAXE.Enums
 {
     public enum BrowserType
     {

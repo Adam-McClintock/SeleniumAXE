@@ -1,64 +1,20 @@
-﻿using OpenQA.Selenium.Support.UI;
+﻿using Newtonsoft.Json;
 using OpenQA.Selenium;
+using Selenium.Axe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TechTalk.SpecFlow;
-using Newtonsoft.Json;
-using Selenium.Axe;
 
-namespace OctoberSpecflow.Pages
+namespace SeleniumAXE.Utilities
 {
-    [Binding]
-    public class BasePage :TechTalk.SpecFlow.Steps
+    public static class AXEHelper
     {
-        protected IWebDriver Driver { get; }
-
-        public BasePage(IWebDriver driver)
-        {
-            Driver = driver;
-        }
-
-        [Given(@"I have navigated to the Automation Practice Home Page")]
-        public void GivenIHaveNavigatedToTheAutomationPracticeHomePage()
-        {
-            AutomationPracticeHomePage homePage = new AutomationPracticeHomePage(Driver);
-            homePage.GoTo();
-            //ScenarioContext.Current.Add("driver", homePage);
-        }
-
-        public void WaitForElement(string element)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath($"//*[@value='{element}']")));
-        }
-
-        public void WaitForForm()
-        {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath($"//*[@class='contact-form-box']")));
-        }
-
-        public void WaitForAlert(string alertMsg)
-        {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath($"//*[contains(text(), '{alertMsg}')]")));
-        }
-
-        public void dropDownSelector(IWebElement dropDown, string option)
-        {
-            var selectElement = new SelectElement(dropDown);
-            selectElement.SelectByText(option);
-        }
-
-        #region AXE Accessibility
-
         // Scans the whole web page including all AXE rules sets and will output a JSON fail containing any
         // failures or violations along with links to deque/WCAG guidelines on how to rectify
         // Would probably favour AxeScanCurrentPage() or AxeScanSubPage() over the AxeBuilder methods
-        public void AxeScanCurrentPage()
+        public static void AxeScanCurrentPage(IWebDriver Driver)
         {
             AxeResult result = Driver.Analyze();
             var resultJson = JsonConvert.SerializeObject(result, Formatting.Indented);
@@ -68,7 +24,7 @@ namespace OctoberSpecflow.Pages
         }
 
         // Another method that creats a html report
-        public void AXEReportScan(string pageName)
+        public static void AXEReportScan(string pageName, IWebDriver Driver)
         {
             pageName = pageName.Replace(" ", "");
             // I manually added a Logs folder in proj bin for this to work
@@ -92,7 +48,7 @@ namespace OctoberSpecflow.Pages
 
         // Scans a sub-section of a page - if we are focusing on a specific DIV or iFrame etc we can input 
         // the locator into this method and AXE will scan against WCAG
-        public void AxeScanSubPage()
+        public static void AxeScanSubPage(IWebDriver Driver)
         {
             var analyzeElementAndChildren = Driver.FindElement(By.CssSelector("WHATEVER LOCATOR IS"));
             AxeResult result = Driver.Analyze(analyzeElementAndChildren);
@@ -105,7 +61,7 @@ namespace OctoberSpecflow.Pages
         // More complex rules if we care about specific WCAG tags, options, elements we want to specifically 
         // include or exclude, specific WCAG rules we want or don't want, where we want the fule output to
         // Usually dont use this unless specific reasoning e.g. don't care about a specific WCAG rule or elements
-        public void AxeBuilderScanPage()
+        public static void AxeBuilderScanPage(IWebDriver Driver)
         {
             var builder = new AxeBuilder(Driver)
                 .WithTags("wcag2a", "wcag2aa", "wcag21a", "wcag21aa");
@@ -119,7 +75,7 @@ namespace OctoberSpecflow.Pages
         }
 
         // Another example of the Axe Builder scanning a specific element/area of web page
-        public void AxeBuilderScanSubPage()
+        public static void AxeBuilderScanSubPage(IWebDriver Driver)
         {
             var builder = new AxeBuilder(Driver)
                 .WithTags("wcag2a", "wcag2aa");
@@ -127,8 +83,5 @@ namespace OctoberSpecflow.Pages
             var element = Driver.FindElement(By.Id("ELEMENT"));
             var results = builder.Analyze(element);
         }
-
-        #endregion
-
     }
 }
