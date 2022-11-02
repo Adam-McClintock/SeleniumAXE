@@ -74,6 +74,12 @@ Scenario: Search for Apprenticeship - Valid
 	When I search for a valid apprenticeship
 	Then I confirm that results are displayed
 
+@AXE
+Scenario: AXE - Become An Apprentice
+	When I navigate to the Become An Apprentice page
+	Then a Become an apprentice page is displayed
+	Then I confirm the Become An Apprentice page is accessible
+
 
 
 

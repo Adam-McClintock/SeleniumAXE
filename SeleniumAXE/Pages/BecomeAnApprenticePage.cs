@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using SeleniumAXE.Utilities;
 using SeleniumAXE.AutomationResources;
+using TechTalk.SpecFlow;
 
 namespace SeleniumAXE.Pages
 {
@@ -23,6 +24,13 @@ namespace SeleniumAXE.Pages
         {
             PageHelper.ThenAPageIsDisplayed(PageTitle, Driver);
         }
+
+        [Then(@"I confirm the Become An Apprentice page is accessible")]
+        public void ThenIConfirmTheBecomeAnApprenticePageIsAccessible()
+        {
+            AXEHelper.AXEReportScan("BecomeAnApprentice", Driver);
+        }
+
 
 
     }
