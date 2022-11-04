@@ -501,7 +501,7 @@ this.FeatureBackground();
  testRunner.Then("there are \"2\" records for store \"934\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 86
- testRunner.Then("the \"Production\" department has a Group Name of \"Manufacturin\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the \"Production\" department has a Group Name of \"Manufacturing\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
