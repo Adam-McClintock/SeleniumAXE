@@ -80,6 +80,13 @@ Scenario: AXE - Become An Apprentice
 	Then a Become an apprentice page is displayed
 	Then I confirm the Become An Apprentice page is accessible
 
+Scenario: Database Test
+	Then customer "1" is assigned to store "934"
+	Then there are "2" records for store "934"
+	Then the "Production" department has a Group Name of "Manufacturing"
+
+	
+
 
 
 
