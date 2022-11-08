@@ -38,7 +38,7 @@ namespace SeleniumAXE.AutomationResources
             // a browser variable from the Azure Pipeline
             if(browser == null)
             {
-                browser = "chrome";
+                browser = "firefox";
             }
 
             Console.WriteLine("Chosen browser is : " + browser.ToLower());
@@ -154,6 +154,8 @@ namespace SeleniumAXE.AutomationResources
             FirefoxOptions options = new FirefoxOptions();
             options.SetPreference("print.always_print_silent", true);
             options.AddArgument("--headless");
+            options.AddArguments("-width=1920");
+            options.AddArguments("-height=1080");
             // May need to add specific width and heigh here when running in headless.
             // Sometimes can run into issues where elements do not fit into viewpoint
             return options;
