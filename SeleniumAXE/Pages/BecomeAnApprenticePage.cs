@@ -12,7 +12,7 @@ namespace SeleniumAXE.Pages
 
         private string PageTitle => "Become an apprentice";
 
-        public IWebElement browseApprenticeshipsBtn => Driver.FindElement(By.Id("fiu-panel-link-faa"));
+        public IWebElement browseApprenticeshipsBtn => Driver.FindElement(By.Id("fiu-app-menu-link-4"));
 
         public BrowseApprenticeshipsPage NavigateToBrowseApprenticeships()
         {
