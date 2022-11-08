@@ -38,7 +38,7 @@ namespace SeleniumAXE.AutomationResources
             // a browser variable from the Azure Pipeline
             if(browser == null)
             {
-                browser = "firefox";
+                browser = "chrome";
             }
 
             Console.WriteLine("Chosen browser is : " + browser.ToLower());
