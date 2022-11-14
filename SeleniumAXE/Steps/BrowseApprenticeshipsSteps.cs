@@ -30,37 +30,37 @@ namespace SeleniumAXE.Steps
         [When(@"I search for an apprenticeship in NI")]
         public void WhenISearchForAnApprenticeshipInNI()
         {
-            browseApp.SearchForNIApprenticeship();
+            browseApp.SearchForApprenticeship("Digital", "BT48 8DZ");
         }
 
         [Then(@"I confirm the NI Apprenticeship Heading is displayed")]
         public void ThenIConfirmTheNIApprenticeshipHeadingIsDisplayed()
         {
-            browseApp.AssertNIHeadingDisplayed();
+            browseApp.AssertHeadingDisplayed("Looking for apprenticeships in Northern Ireland?");
         }
 
         [When(@"I search for an apprenticeship in Scotland")]
         public void WhenISearchForAnApprenticeshipInScotland()
         {
-            browseApp.SearchForScottishApprenticeship();
+            browseApp.SearchForApprenticeship("Digital", "G22 5EQ");
         }
 
         [Then(@"I confirm the Scottish Apprenticeship Heading is displayed")]
         public void ThenIConfirmTheScottishApprenticeshipHeadingIsDisplayed()
         {
-            browseApp.AssertScottishHeadingDisplayed();
+            browseApp.AssertHeadingDisplayed("Looking for apprenticeships in Scotland?");
         }
 
         [When(@"I search for an apprenticeship in Wales")]
         public void WhenISearchForAnApprenticeshipInWales()
         {
-            browseApp.SearchForWelshApprenticeship();
+            browseApp.SearchForApprenticeship("Digital", "CF10 5ET");
         }
 
         [Then(@"I confirm the Welsh Apprenticeship Heading is displayed")]
         public void ThenIConfirmTheWelshApprenticeshipHeadingIsDisplayed()
         {
-            browseApp.AssertWelshHeadingDisplayed();
+            browseApp.AssertHeadingDisplayed("Looking for apprenticeships in Wales?");
         }
 
         [When(@"I search for an apprenticeship with empty fields")]
@@ -84,7 +84,7 @@ namespace SeleniumAXE.Steps
         [When(@"I search for a valid apprenticeship")]
         public void WhenISearchForAValidApprenticeship()
         {
-            browseApp.SearchForValidApprenticeship();
+            browseApp.SearchForApprenticeship("Digital", "N21 3WL");
         }
 
         [Then(@"I confirm that results are displayed")]

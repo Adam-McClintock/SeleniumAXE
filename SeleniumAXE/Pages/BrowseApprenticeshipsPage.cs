@@ -11,7 +11,7 @@ namespace SeleniumAXE.Pages
         public BrowseApprenticeshipsPage(IWebDriver driver) : base(driver) { }
 
         private string PageTitle => "Browse apprenticeships before you apply";
-        public IWebElement interestDropDown => Driver.FindElement(By.Id("Route"));
+        public IWebElement routeDropDown => Driver.FindElement(By.Id("Route"));
         public IWebElement postCodeField => Driver.FindElement(By.Id("Postcode"));
         public IWebElement searchBtn => Driver.FindElement(By.Id("search-apprenticeship"));
         public IWebElement errorSummaryAlert => Driver.FindElement(By.ClassName("govuk-error-summary"));
@@ -27,45 +27,21 @@ namespace SeleniumAXE.Pages
             PageHelper.ThenAPageIsDisplayed(PageTitle, Driver);
         }
 
-        public void SearchForNIApprenticeship()
+        public void SearchForApprenticeship(string routeSelection, string postcode)
         {
-            InputHelper.dropDownSelector(interestDropDown, "Digital");
-            InputHelper.InputText(postCodeField, "BT48 8DZ");
-            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
+            InputHelper.dropDownSelector(routeDropDown, routeSelection);
+            InputHelper.InputText(postCodeField, postcode);
+            InputHelper.Click(searchBtn, Driver);
         }
 
-        public void AssertNIHeadingDisplayed()
+        public void AssertHeadingDisplayed(string pageHeading)
         {
-            PageHelper.ThenAPageIsDisplayed("Looking for apprenticeships in Northern Ireland?", Driver);        
-        }
-
-        public void SearchForScottishApprenticeship()
-        {
-            InputHelper.dropDownSelector(interestDropDown, "Digital");
-            InputHelper.InputText(postCodeField, "G22 5EQ");
-            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
-        }
-
-        public void AssertScottishHeadingDisplayed()
-        {
-            PageHelper.ThenAPageIsDisplayed("Looking for apprenticeships in Scotland?", Driver);
-        }
-
-        public void SearchForWelshApprenticeship()
-        {
-            InputHelper.dropDownSelector(interestDropDown, "Digital");
-            InputHelper.InputText(postCodeField, "CF10 5ET");
-            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
-        }
-
-        public void AssertWelshHeadingDisplayed()
-        {
-            PageHelper.ThenAPageIsDisplayed("Looking for apprenticeships in Wales?", Driver);
+            PageHelper.ThenAPageIsDisplayed(pageHeading, Driver);
         }
 
         public void EmptyApprenticeshipSearch()
         {
-            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
+            InputHelper.Click(searchBtn, Driver);
         }
 
         public void AssertErrorAlertIsDisplayed()
@@ -89,13 +65,6 @@ namespace SeleniumAXE.Pages
             else check = false;
 
             Assert.IsTrue(check, "The Validation Messages are not displayed");
-        }
-
-        public void SearchForValidApprenticeship()
-        {
-            InputHelper.dropDownSelector(interestDropDown, "Digital");
-            InputHelper.InputText(postCodeField, "N21 3WL");
-            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
         }
 
         public void AssertApprenticeshipSearchResultsDisplayed()

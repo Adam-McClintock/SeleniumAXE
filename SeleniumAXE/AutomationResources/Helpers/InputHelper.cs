@@ -13,7 +13,7 @@ namespace SeleniumAXE.Utilities
 {
     public static class InputHelper
     {
-        public static void WhenIClickOnTheButton(IWebElement element, IWebDriver Driver)
+        public static void Click(IWebElement element, IWebDriver Driver)
         {
             // Using JS as I've been getting the error Element is not clickable at point
             WaitHelper.WaitForElementClickable(element, Driver);

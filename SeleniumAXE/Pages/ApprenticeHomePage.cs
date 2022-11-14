@@ -41,15 +41,13 @@ namespace SeleniumAXE.Pages
 
         public void DismissCookieAlert()
         {
-            //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
-            //wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath($"//*[@data-module='cookieBanner']")));
-            acceptCookiesBtn.Click();
-            closeCookiesBtn.Click();
+            InputHelper.Click(acceptCookiesBtn, Driver);
+            InputHelper.Click(closeCookiesBtn, Driver);
         }
 
         public void HideMessageLink()
         {
-            hideMessageLink.Click();    
+            InputHelper.Click(hideMessageLink, Driver);    
         }
 
         public bool ConfirmHideMessageLinkVisible()
@@ -71,13 +69,13 @@ namespace SeleniumAXE.Pages
 
         public BecomeAnApprenticePage NavigateToApprenticesPage()
         {
-            InputHelper.WhenIClickOnTheButton(becomeAnApprenticeBtn, Driver);
+            InputHelper.Click(becomeAnApprenticeBtn, Driver);
             return new BecomeAnApprenticePage(Driver);
         }
 
         public HireAnApprenticePage NavigateToHireAnApprenticePage()
         {
-            InputHelper.WhenIClickOnTheButton(hireAnApprenticeBtn, Driver);
+            InputHelper.Click(hireAnApprenticeBtn, Driver);
             return new HireAnApprenticePage(Driver);
         }
 

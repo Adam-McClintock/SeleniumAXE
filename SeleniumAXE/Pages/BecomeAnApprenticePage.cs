@@ -16,7 +16,7 @@ namespace SeleniumAXE.Pages
 
         public BrowseApprenticeshipsPage NavigateToBrowseApprenticeships()
         {
-            InputHelper.WhenIClickOnTheButton(browseApprenticeshipsBtn, Driver);
+            InputHelper.Click(browseApprenticeshipsBtn, Driver);
             return new BrowseApprenticeshipsPage(Driver);
         }
 
