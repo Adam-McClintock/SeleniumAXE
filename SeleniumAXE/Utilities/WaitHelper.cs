@@ -27,5 +27,11 @@ namespace SeleniumAXE.Utilities
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath($"//*[contains(text(), '{alertMsg}')]")));
         }
+
+        public static void WaitForElementClickable(IWebElement element, IWebDriver Driver)
+        {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(15));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace SeleniumAXE.Pages
         {
             InputHelper.dropDownSelector(interestDropDown, "Digital");
             InputHelper.InputText(postCodeField, "BT48 8DZ");
-            InputHelper.WhenIClickOnTheButton(searchBtn);
+            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
         }
 
         public void AssertNIHeadingDisplayed()
@@ -43,7 +43,7 @@ namespace SeleniumAXE.Pages
         {
             InputHelper.dropDownSelector(interestDropDown, "Digital");
             InputHelper.InputText(postCodeField, "G22 5EQ");
-            InputHelper.WhenIClickOnTheButton(searchBtn);
+            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
         }
 
         public void AssertScottishHeadingDisplayed()
@@ -55,7 +55,7 @@ namespace SeleniumAXE.Pages
         {
             InputHelper.dropDownSelector(interestDropDown, "Digital");
             InputHelper.InputText(postCodeField, "CF10 5ET");
-            InputHelper.WhenIClickOnTheButton(searchBtn);
+            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
         }
 
         public void AssertWelshHeadingDisplayed()
@@ -65,7 +65,7 @@ namespace SeleniumAXE.Pages
 
         public void EmptyApprenticeshipSearch()
         {
-            InputHelper.WhenIClickOnTheButton(searchBtn);
+            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
         }
 
         public void AssertErrorAlertIsDisplayed()
@@ -95,7 +95,7 @@ namespace SeleniumAXE.Pages
         {
             InputHelper.dropDownSelector(interestDropDown, "Digital");
             InputHelper.InputText(postCodeField, "N21 3WL");
-            InputHelper.WhenIClickOnTheButton(searchBtn);
+            InputHelper.WhenIClickOnTheButton(searchBtn, Driver);
         }
 
         public void AssertApprenticeshipSearchResultsDisplayed()

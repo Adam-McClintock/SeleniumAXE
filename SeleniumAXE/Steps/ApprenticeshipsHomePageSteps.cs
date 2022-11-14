@@ -13,7 +13,7 @@ using SeleniumAXE.AutomationResources;
 namespace SeleniumAXE.Steps
 {
     [Binding]
-    [Scope(Feature = "Apprenticeships")]
+    //[Scope(Feature = "Apprenticeships")]
     internal class ApprenticeshipsHomePageSteps : BaseClass
     {
         private ApprenticeHomePage homePage;
@@ -40,6 +40,14 @@ namespace SeleniumAXE.Steps
         {
             homePage.NavigateToApprenticesPage();
         }
+
+        [When(@"I navigate to the Hire an Apprentice Page")]
+        public void WhenINavigateToTheHireAnApprenticePage()
+        {
+            homePage
+                .NavigateToHireAnApprenticePage();
+        }
+
 
         #region Assertions
         [Then(@"I confirm that the Apprenticeships Home Page is visible")]

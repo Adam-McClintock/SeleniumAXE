@@ -15,7 +15,7 @@
       <Value Profile="(Default)">c:\screenshots</Value>
     </Setting>
     <Setting Name="Headless" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ClearCache" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

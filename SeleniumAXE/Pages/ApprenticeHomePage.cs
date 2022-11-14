@@ -24,7 +24,8 @@ namespace SeleniumAXE.Pages
         public IWebElement acceptCookiesBtn => Driver.FindElement(By.Id("fiu-cb-button-accept"));
         public IWebElement closeCookiesBtn => Driver.FindElement(By.Id("fiu-cb-close"));
         public IWebElement hideMessageLink => Driver.FindElement(By.ClassName("fiu-banner__hide-link"));
-        public IWebElement becomeAnApprenticeBtn => Driver.FindElement(By.Id("fiu-homepage-link-app-hub"));
+        public IWebElement becomeAnApprenticeBtn => Driver.FindElement(By.Id("fiu-header-link-apprentices"));
+        private IWebElement hireAnApprenticeBtn => Driver.FindElement(By.Id("fiu-header-link-employers"));
 
         #endregion
 
@@ -70,11 +71,15 @@ namespace SeleniumAXE.Pages
 
         public BecomeAnApprenticePage NavigateToApprenticesPage()
         {
-            InputHelper.WhenIClickOnTheButton(becomeAnApprenticeBtn);
+            InputHelper.WhenIClickOnTheButton(becomeAnApprenticeBtn, Driver);
             return new BecomeAnApprenticePage(Driver);
         }
 
-
+        public HireAnApprenticePage NavigateToHireAnApprenticePage()
+        {
+            InputHelper.WhenIClickOnTheButton(hireAnApprenticeBtn, Driver);
+            return new HireAnApprenticePage(Driver);
+        }
 
         #endregion
 
@@ -90,6 +95,7 @@ namespace SeleniumAXE.Pages
             Assert.False(ConfirmHideMessageLinkVisible(), $"The Hide Message Link is displayed");
         }
 
+        
         #endregion
 
     }
